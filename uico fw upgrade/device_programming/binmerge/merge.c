@@ -149,14 +149,17 @@ int  main(int argc,char *argv[])
 		 
     }
 //动态申请空间, 为保存字符串结尾标志\0, 多申请一个字符的空间
-    char *pchBuf = (char*) malloc(sizeof(char)*i+1);
+    char *pchBuf = (char*) malloc(sizeof(char)*i+10);
     if(!pchBuf) {
         perror("not enough heap!\n");
         exit(0);
     }
+	
 
 //读取文件内容//读取的长度和源文件长度有可能有出入，这里自动调整 nLen
     i = fread(pchBuf, sizeof(unsigned char), i, s2fp);
+    uint16_t lenth = i;
+    fwrite(&lenth, sizeof(unsigned char),  sizeof(uint16_t), s1fp);
     fwrite(pchBuf,sizeof(unsigned char), i, s1fp);
 
 #if 0
