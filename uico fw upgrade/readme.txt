@@ -5,6 +5,7 @@ Feature:
 3.only support uico firmware with limitation of 14Kb
 
 
+
 //===============================================================================
 Folder Structure£º
 device_programming£ºinternally used
@@ -23,6 +24,19 @@ V0.1
 NEW Feature:
 1.band frimware has the ability to adapt to diffrent uico binary size
 2.change parameter of bin to hex tool to set block size to 16 bytes
+
+V0.2
+NEW Feature:
+1.add cling_binary to store cling band binary file 
+(Lemon - ble tuning.bin: binary file with bel tuning function;
+ Lemon - product release.bin: product release binary file for customer used; 
+ Lemon.bin: used for bunring )
+2.remove the Lemon.bin firmware from folder burining tool for band\uico fw upgrade\device_programming to   burining tool for band\uico fw upgrade
+
+OPERATION DIFFRENCE:
+1.the way to switch Uico firmware is totally the same
+2.If Cling binary file is need to be switched, all need to do is just rename  Lemon - ble tuning.bin or Lemon - product release.bin to Lemon.bin
+ then, run batch file user_bat.bat
 
 
 

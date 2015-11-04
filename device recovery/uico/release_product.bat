@@ -1,8 +1,8 @@
 for /f "tokens=1,2 delims==" %%a in (fv.txt) do ( set "test=%%a")
 echo %test%
-nrfjprog.exe  --eraseall 
+
+nrfjprog.exe   --clockspeed 200 --eraseall
 nrfjprog.exe --reset 
-nrfjprog.exe --clockspeed 2000
 
 nrfjprog.exe  --eraseall 
 nrfjprog.exe --reset 
